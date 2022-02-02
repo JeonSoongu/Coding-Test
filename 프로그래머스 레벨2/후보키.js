@@ -4,6 +4,7 @@ function solution(relation) {
   let count = 0;
   let bitMaskList = [];
   for (let i = 1; i < 1 << column; ++i) {
+    // 공집합을 제외한 모든 집합
     let keySet = new Set();
     for (let j = 0; j < row; ++j) {
       let key = "";
