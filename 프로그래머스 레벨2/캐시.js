@@ -10,21 +10,15 @@ function solution(cacheSize, cities) {
   }
 
   const curr = [];
-  cities.map((x, i) => {
+  cities.map((x) => {
     const idx = curr.indexOf(x);
-    if (curr.includes(x)) {
+    if (idx > -1) {
       const choiceCity = curr[idx];
       curr.splice(idx, 1);
-      for (let i = 0; i < cacheSize; i++) {
-        curr.push(curr[i]);
-        curr.pop();
-      }
       curr.unshift(choiceCity);
       answer += 1;
     } else {
-      if (curr.length === cacheSize) {
-        curr.splice(curr.length - 1, 1);
-      }
+      if (curr.length >= cacheSize) curr.splice(curr.length - 1, 1);
       curr.unshift(x);
       answer += 5;
     }
