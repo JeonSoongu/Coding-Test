@@ -31,9 +31,9 @@ function solution(msg) {
     Z: 26,
   };
 
-  const lastWord = msg.split("").reduce((acc, curr, idx) => {
+  const lastWord = msg.split("").reduce((acc, curr) => {
     newWord = acc + curr;
-
+    console.log(newWord);
     if (alphabet[newWord] >= 1) {
       return acc + curr;
     } else {
@@ -47,3 +47,5 @@ function solution(msg) {
   answer.push(alphabet[lastWord]);
   return answer;
 }
+
+console.log(solution("AAA"));
