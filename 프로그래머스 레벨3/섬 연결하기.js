@@ -11,7 +11,6 @@ function solution(n, costs) {
   while (cnt < n - 1) {
     for (let i = 0; i < costs.length; i++) {
       const [start, end, cost] = costs[i];
-      if (bridge[i]) continue;
       if (
         (!visited[start] && visited[end]) ||
         (visited[start] && !visited[end])
