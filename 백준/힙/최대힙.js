@@ -1,10 +1,5 @@
 const fs = require("fs");
-let input = fs
-  .readFileSync("/dev/stdin")
-  .toString()
-  .trim()
-  .split("\n")
-  .map(Number);
+let input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 
 class MaxHeap {
   constructor() {
@@ -66,8 +61,8 @@ class MaxHeap {
 const heap = new MaxHeap();
 let extracts = "";
 for (let i = 1; i < input.length; i++) {
-  if (input[i] > 0) {
-    heap.insert(input[i]);
+  if (+input[i] > 0) {
+    heap.insert(+input[i]);
   } else {
     extracts += heap.delete() + "\n";
   }
